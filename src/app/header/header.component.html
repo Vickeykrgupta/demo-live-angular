@@ -1,0 +1,122 @@
+<div id="header">
+  <div id="logo" (click)="togglesidemenu.emit()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+
+  <div id="menu">
+
+    <form id="searchForm">
+      <input type="text" id="searchInput" style="width: 70%;" placeholder="Enter your search">
+      <button type="button"style="width: 20%;" onclick="performSearch()"><i class="fa fa-search" ></i></button>
+    </form>
+  
+     <div class="profile-logo dropdown">
+            <button class="btn" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-flag"></i>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" class="dropdown-item"
+                  ><i class="fa-solid fa-flag"></i>India</a
+                >
+              </li>
+              
+              <li>
+                <a href="#" class="dropdown-item"
+                  ><i class="fa-solid fa-flag"></i>English</a
+                >
+              </li>
+              <li>
+                <a href="#" class="dropdown-item"
+                  ><i class="fa-solid fa-flag"></i>Spanish</a
+                >
+              </li>
+              <li>
+                <a href="#" class="dropdown-item"
+                  ><i class="fa-solid fa-flag"></i>portugese</a
+                >
+              </li>
+              
+            </ul>
+          </div>
+          <div class="profile-logo dropdown">
+            <button class="btn " data-bs-toggle="dropdown">
+                <i class="fa-solid fa-bell"></i>
+            </button>
+            <ul class="dropdown-menu bell">
+              <li>
+                <a href="#" class="dropdown-item">
+                <h3>Notification</h3>
+                </a>
+              </li><hr>
+              <li>
+                <a href="#" class="dropdown-item" style="color: blue;">
+                 
+                  <h4> <i class="fa fa-shopping-bag">
+                   
+                  </i>your order is ready</h4>
+                  <p>Lorem ipsum  dolor sit, amet </p>
+                 </a>
+              </li><hr>
+              <li>
+                <a href="#" class="dropdown-item" style="color:green;">
+                 
+                  <h4> <i class="fa fa-download">
+                   
+                  </i>Download Complete</h4>
+                  <p>Lorem ipsum  dolor sit, amet </p>
+                 </a>
+              </li><hr>
+              <li>             
+                
+                <a href="#" class="dropdown-item">
+                 
+                 <h4> <i class="fa fa-info-circle">
+
+                 </i>250 mb Trash files</h4>
+                 <p>Lorem ipsum  dolor sit, amet </p>
+                </a>
+                
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="btn">
+          <i class="fa-solid fa-message"></i>
+               </div>
+
+          <div class="profile-logo dropdown">
+            <button class="btn " data-bs-toggle="dropdown">
+              <img src="https://png.pngtree.com/png-vector/20190411/ourmid/pngtree-business-male-icon-vector-png-image_916468.jpg" style="width: 30px; border-radius:500%;" alt="profile">
+
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#" class="dropdown-item"
+                  ><i class="fa-solid fa-user"></i>Edit profile</a
+                >
+              </li>
+              <li>
+                <a href="#" class="dropdown-item"
+                  ><i class="fa-regular fa-message"></i>inbox</a
+                >
+              </li>
+              <li>
+                <a href="#" class="dropdown-item"
+                  ><i class="fa-solid fa-lock"></i>Lock Screen</a
+                >
+              </li>
+              <li>
+                <a href="#" class="dropdown-item"
+                  ><i class="fa-solid fa-gear"></i>Setting</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          
+        
+    </div>
+  </div>
+

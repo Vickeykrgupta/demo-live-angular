@@ -1,0 +1,258 @@
+<!-- <div id="sidemenu" [ngClass]="{ collapsed: !sidemenuActive }">
+  <ul class="nav-list">
+    <div class="main-icon">
+      <img
+        src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-trolley-images-pixabay-download-pictures-14.png"
+        width="50px"
+        alt=""
+      />
+      <div class="tt"></div>
+      <h3 *ngIf="sidemenuActive">Taza Tokri</h3>
+    </div>
+
+    <div class="profile" *ngIf="sidemenuActive">
+      <img
+        src="https://pxbar.com/wp-content/uploads/2023/09/single-boy-dp-pic-Download.jpg"
+        width="50%"
+        alt=""
+      />
+      <p class="name">john</p>
+      <p>Admin Manager</p>
+    </div>
+
+    <li class="nav-list-item"  *ngFor="let item of list">
+      <i class="{{ item.icon }} "></i>
+      <span>
+        <h5>{{ item.name }}</h5>
+        <div class="profile-logo dropdown">
+          <button class="btn"     data-bs-toggle="dropdown">
+            <a href="#" *ngIf="sidemenuActive"></a>
+          </button>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#" class="dropdown-item"
+                ><i class="fa-solid fa-envelope"></i> Gmail</a
+              >
+            </li>
+            <li>
+              <a href="#" class="dropdown-item"
+                ><i class="fa-solid fa-envelope"></i> Message</a
+              >
+            </li>
+            <li>
+              <a href="#" class="dropdown-item"
+                ><i class="fa-solid fa-phone"></i> Calls</a
+              >
+            </li>
+            <li>
+              <a href="#" class="dropdown-item"
+                ><i class="fa-solid fa-right-from-bracket"></i> Log out</a
+              >
+            </li>
+          </ul>
+        </div>
+      </span>
+    </li>
+  </ul>
+</div> -->
+
+
+
+
+
+
+
+<div class="sidebar">
+  <div class="brandlogo">
+
+    <div class="main-icon">
+      <img
+        src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-trolley-images-pixabay-download-pictures-14.png"
+        width="50px"
+        alt=""
+      />
+      <div class="tt"></div>
+      <h3 *ngIf="sidemenuActive">Taza Tokri</h3>
+    </div>
+    <!-- <div class="sidebar-logo-img">{{sidemenuActive}}
+      <img src="https://www.freepnglogos.com/uploads/shopping-cart-png/shopping-cart-trolley-images-pixabay-download-pictures-14.png " alt="" />
+    </div> -->
+  </div>
+  <div class="sidebar-menu">
+    
+      <div class="profile" *ngIf="sidemenuActive">
+        <img
+          src="https://pxbar.com/wp-content/uploads/2023/09/single-boy-dp-pic-Download.jpg"
+          width="50%"
+          alt=""
+        />
+        <p class="name">john</p>
+        <p>Admin Manager</p>
+      </div>
+      <!-- <div class="profile-img">
+        <img src="../../assets/images/profile.png" alt="" />
+      </div>
+      <div class="profile-info">
+        <p class="title">JOHN</p>
+        <P class="tag">GENERAL MANAGER</P>
+      </div>
+    </div> -->
+
+    <div class="menu" onclick=" openSidebar()" > 
+      <div class="item has-collapsible" (click)="itemClick('dashboard')" [ngClass]="{'active': isItemActive('dashboard')}">
+        <a class="sub-btn" routerLink="/admin/dashboard"><i class="fa-solid hover-icon fa-house"></i>
+          <div class="item-text"> Dashboard</div>
+        </a>
+      </div>
+
+      <div class="item has-collapsible"  (click)="itemClick('admin')" [ngClass]="{'active': activeItem=='admin'}">
+        <a class="sub-btn"><i class="fa-brands hover-icon fa-adn"></i>
+          <div class="item-text">Admin<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu admin">
+          <li routerLink="admin/office" class="sub-item" [ngClass]="{'active': activeSubItem=='office'}" (click)="subItemClick('office', 'admin',$event)">Organisation Office</li>
+          <li routerLink="admin/organisation" class="sub-item" [ngClass]="{'active': activeSubItem=='organisation'}" (click)="subItemClick('organisation', 'admin',$event)">Organisation Registration</li>
+          <li routerLink="admin/vendor" class="sub-item" [ngClass]="{'active': activeSubItem=='vendor'}" (click)="subItemClick('vendor', 'admin',$event)">Vendor Registration</li>
+          <li routerLink="admin/user" class="sub-item" [ngClass]="{'active': activeSubItem=='user'}" (click)="subItemClick('user', 'admin',$event)">User Registration</li>
+          <li routerLink="admin/address" class="sub-item" [ngClass]="{'active': activeSubItem=='address'}" (click)="subItemClick('address', 'admin',$event)">Address</li>
+          <li routerLink="admin/userlist" class="sub-item" [ngClass]="{'active': activeSubItem=='userlist'}" (click)="subItemClick('userlist', 'admin',$event)">Userlist</li>
+        </ul>
+      </div>
+      
+      <div class="item has-collapsible" (click)="itemClick('products')" [ngClass]="{'active': activeItem=='products'}">
+        <a class="sub-btn"><i class="fa-solid hover-icon fa-cube"></i>
+            <div class="item-text">Products<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu products">
+            <li routerLink="product/categorygroup" class="sub-item" [ngClass]="{'active': activeSubItem=='categorygroup'}" (click)="subItemClick('categorygroup', 'products', $event)">Category Group</li>
+            <li routerLink="product/category" class="sub-item" [ngClass]="{'active': activeSubItem=='category'}" (click)="subItemClick('category', 'products', $event)">Category</li>
+            <li routerLink="product/subcategory" class="sub-item" [ngClass]="{'active': activeSubItem=='subcategory'}" (click)="subItemClick('subcategory', 'products', $event)">SubCategory</li>
+            <li routerLink="product/unittype" class="sub-item" [ngClass]="{'active': activeSubItem=='unittype'}" (click)="subItemClick('unittype', 'products', $event)">Unit Type</li>
+            <li routerLink="product/unit" class="sub-item" [ngClass]="{'active': activeSubItem=='unit'}" (click)="subItemClick('unit', 'products', $event)">Unit</li>
+            <li routerLink="product/variation" class="sub-item" [ngClass]="{'active': activeSubItem=='variation'}" (click)="subItemClick('variation', 'products', $event)">Variation</li>
+            <li routerLink="product/brand" class="sub-item" [ngClass]="{'active': activeSubItem=='brand'}" (click)="subItemClick('brand', 'products', $event)">Brand</li>
+            <li routerLink="product/inventory" class="sub-item" [ngClass]="{'active': activeSubItem=='inventory'}" (click)="subItemClick('inventory', 'products', $event)">Inventory</li>
+            <li routerLink="product/inventoryspecification" class="sub-item" [ngClass]="{'active': activeSubItem=='inventoryspecification'}" (click)="subItemClick('inventoryspecification', 'products', $event)">Inventory Specification</li>
+        </ul>
+    </div>
+    
+
+
+
+      <div class="item has-collapsible" (click)="itemClick('orders')" [ngClass]="{'active': isItemActive('orders')}">
+        <a class="sub-btn"><i class="fab fa-solid hover-icon fa-first-order"></i>
+          <div class="item-text">Orders<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu orders">
+          <li class="sub-item">order list</li>
+          <li class="sub-item">Order Tracking</li>
+          <li class="sub-item">Order Details</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('sales')" [ngClass]="{'active': isItemActive('sales')}">
+        <a class="sub-btn"><i class="fa-solid fa-chart-bar"></i>
+          <div class="item-text">Sales<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu sales">
+          <li class="sub-item">Order</li>
+          <li class="sub-item">Transcation</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('coupons')" [ngClass]="{'active': isItemActive('coupons')}">
+        <a class="sub-btn"><i class="fa-solid hover-icon fa-gift" aria-hidden="true"></i>
+          <div class="item-text">Coupons<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu coupons">
+          <li class="sub-item">List Coupon</li>
+          <li class="sub-item">Create Coupon</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('pages')" [ngClass]="{'active': isItemActive('pages')}">
+        <a class="sub-btn"><i class="fa-solid hover-icon fa-pager"></i>
+          <div class="item-text">Pages<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu pages">
+          <li class="sub-item">List Page</li>
+          <li class="sub-item">Create Page</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('media')" [ngClass]="{'active': isItemActive('media')}">
+        <a><i class="fa-solid hover-icon fa-camera"></i>Media</a>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('menus')" [ngClass]="{'active': isItemActive('menus')}">
+        <a class="sub-btn"><i class="fa-solid hover-icon fa-bars"></i>
+          <div class="item-text">Menus<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu menus">
+          <li href="" class="sub-item">Menu ist</li>
+          <li class="sub-item">Create Menu</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('users')" [ngClass]="{'active': isItemActive('users')}">
+        <a class="sub-btn"><i class="fa-solid hover-icon fa-user"></i>
+          <div class="item-text">Users<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu users">
+          <li class="sub-item">User list</li>
+          <li class="sub-item">Create user</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('vendors')" [ngClass]="{'active': isItemActive('vendors')}">
+        <a class="sub-btn"><i class="fa-solid hover-icon fa-industry" aria-hidden="true"></i>
+          <div class="item-text">Vendors<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu vendors">
+          <li class="sub-item">Vendor List</li>
+          <li class="sub-item">Create Vendor</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('localization')" [ngClass]="{'active': isItemActive('localization')}">
+        <a class="sub-btn"><i class="fa-solid hover-icon fa-location-crosshairs"></i>
+          <div class="item-text">Localization<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu localization" (click)="itemClick('coupons')" [ngClass]="{'active': isItemActive('coupons')}">
+          <li class="sub-item">Transcation</li>
+          <li class="sub-item">Rate</li>
+          <li class="sub-item">Currency</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('settings')" [ngClass]="{'active': isItemActive('settings')}">
+        <a class="sub-btn"><i class="fa-solid hover-icon fa-gear"></i>
+          <div class="item-text">Settings<i class="fas fa-angle-right rotate"></i></div>
+        </a>
+        <ul class="sub-menu settings">
+          <li routerLink="setting/profile" class="sub-item">Profile</li>
+          <li class="sub-item">Theme</li>
+        </ul>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('support-ticket')" [ngClass]="{'active': isItemActive('support-ticket')}">
+        <a routerLink="/dashboard"><i class="fa-solid hover-icon fa-phone"></i>
+          <div class="item-text">Support Ticket</div>
+        </a>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('reports')" [ngClass]="{'active': isItemActive('reports')}">
+        <a routerLink="/dashboard"><i class="fa-solid hover-icon fa-chart-simple"></i>
+          <div class="item-text">Reports</div>
+        </a>
+      </div>
+
+      <div class="item has-collapsible" (click)="itemClick('invoice')" [ngClass]="{'active': isItemActive('invoice')}">
+        <a routerLink="/dashboard"><i class="fa-solid hover-icon fa-file-invoice"></i>
+          <div class="item-text">Invoice</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

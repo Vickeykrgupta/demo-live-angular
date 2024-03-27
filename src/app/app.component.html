@@ -1,0 +1,14 @@
+<div id="container" [ngClass]="{ sidemenuActive: sidemenuActive }">
+  <app-sidemenu (togglesidemenu)="sidemenuActive = !sidemenuActive"
+  [sidemenuActive]="sidemenuActive"></app-sidemenu>
+  <!-- <app-sidemenu></app-sidemenu> -->
+  <div id="contentContainer">
+     <app-header (togglesidemenu)="sidemenuActive = !sidemenuActive"
+     [sidemenuActive]="sidemenuActive" >
+    </app-header>
+    <h1>Welcome to Dashboard</h1>
+  </div>
+</div>
+
+<!-- (togglesidemenu)="sidemenuActive = !sidemenuActive"
+      [sidemenuActive]="sidemenuActive" -->
